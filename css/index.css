@@ -517,3 +517,7 @@ table {
 .tr-camps {
   min-width: 120px;
 }
+
+.col-2 {
+  grid-column: span 2;
+}
