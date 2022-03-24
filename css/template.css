@@ -1,0 +1,75 @@
+.header-template {
+  position: fixed;
+  height: 100vh;
+  width: 18%;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  display: flex;
+  background: white;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.51);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.51);
+}
+.logo {
+  width: 200px;
+  margin-top: 25%;
+}
+nav {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 10px;
+  height: 55%;
+}
+
+nav li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+nav li span {
+  color: black;
+  margin-left: 5px;
+}
+
+nav li:hover {
+  border-bottom: 2px solid black;
+  border-radius: 0;
+}
+nav li img {
+  width: 35px;
+}
+
+.title-template {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.btn-logout {
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.add-sell {
+  cursor: pointer;
+}
+.btn-back {
+  color: black;
+  font-weight: bolder;
+  margin-left: 10px;
+  padding: 5px;
+  border: black solid 1px;
+  text-decoration: none;
+}

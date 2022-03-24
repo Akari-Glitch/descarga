@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+.signin-contain {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  left: 0;
+}
+.signin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+
+  height: 100%;
+  flex-direction: column;
+}
+
+.more-options {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.more-options a {
+  color: #ed893e;
+}
+
+.bienvenido:hover {
+  color: #ed893e;
+}
+
+.title-signin {
+  text-align: center;
+  font-size: 2.3rem;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo {
+  width: 280px;
+  margin-top: 50px;
+}
+.input-signin {
+  width: 340px;
+  height: 40px;
+  font-size: 15px;
+  background: white;
+  margin-bottom: 5px;
+  border: none;
+  box-shadow: rgb(0 0 0 / 25%) 0px 0px 2px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.enter-signin {
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  background: #fa8328;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.puntomarket {
+  color: #ed893e;
+}
+.error-signin {
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 8px;
+  width: 340px;
+  text-align: start;
+  font-weight: lighter;
+}
+
+.puntomarket-background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 38%;
+}

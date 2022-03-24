@@ -34,6 +34,10 @@ router.get("/inventario", isAuthenticated, async (req, res, next) => {
   res.render("inventario", { sales: sales });
 });
 
+router.get("/ventas", isAuthenticated, async (req, res, next) => {
+  res.render("ventas");
+});
+
 router.post("/inventario/add", async (req, res, next) => {
   const sale = Sales(req.body);
   await sale.save();

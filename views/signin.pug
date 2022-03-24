@@ -5,14 +5,25 @@ html(lang="es")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="ie=edge")
 		title PuntoMarket
+		<link rel="icon" href="/logo.png">
 		style
-			include ../css/index.css
+			include ../css/signin.css
 	div(class="signin-contain")
-		h1(class="title-signin") Bienvenido, PuntoMarket!
-			form(action="/" method="POST" class="form-signin")
-				input(type="text" autocomplete="off" name="username" placeholder="ingrese el usuario del administrador" class="input-signin")
-				input(type="password" autocomplete="off" name="password" placeholder="ingrese la clave del administrador" class="input-signin")
+		div(class="signin")
+			img(src="/logo.png" class="logo")
+			div
+				h1(class="title-signin")
+					span(class="bienvenido") ¡Bienvenido, 
+					span(class="puntomarket") PuntoMarket!
+				form(action="/" method="POST" class="form-signin")
+					label(for="username") username
+					input(type="text" id="username" autocomplete="off" name="username" placeholder="ingrese el usuario" class="input-signin" required)
+					label(for="password") password
+					input(type="password" id="password" autocomplete="off" name="password" placeholder="ingrese la clave" class="input-signin" required)
 
-				button(type="submit" class="enter-signin") Entrar
-				if signinMessage 
-					div(class="error-signin") #{signinMessage}
+					button(type="submit" class="enter-signin") Entrar
+					if signinMessage 
+						div(class="error-signin") #{signinMessage}
+					div(class="more-options")
+						a(href="#" ) registrarse
+						a(href="#") recuperar contraseña

@@ -1,0 +1,153 @@
+.calc-title {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 100px;
+}
+
+.calc-content-articles {
+  overflow-y: hidden;
+}
+
+.edit-num {
+  margin-right: 3px;
+}
+
+.calc-tasa-dolar {
+  width: 400px;
+  height: 40px;
+}
+
+.calc-contain-tasa-dolar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calc-contain-tasa-dolar label {
+  font-size: 1.5rem;
+}
+label {
+  margin-bottom: 4px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculadora {
+  display: grid;
+  grid-template-columns: repeat(4, 75px);
+  grid-template-rows: 160px repeat(5, 75px);
+  background-color: gray;
+  padding: 15px;
+  border-radius: 32px;
+}
+
+.container button {
+  cursor: pointer;
+  margin: 5px;
+  padding: 0;
+  border-radius: 32px;
+  font-size: 1.5em;
+  border: none;
+  background-color: white;
+  box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
+}
+
+.container button:active {
+  background-color: gray;
+}
+
+.container button:focus {
+  outline: none;
+}
+
+.display {
+  grid-column: 1 / -1;
+  padding: 16px;
+  display: flex;
+  margin: 10px 10px 20px;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #363636;
+  border-radius: 32px;
+  text-align: right;
+  justify-content: space-between;
+  word-break: break-all;
+  box-shadow: 0px 0px 0px 10px #00000033;
+}
+
+#valor-actual {
+  font-size: 1.5em;
+}
+
+#valor-anterior {
+  font-size: 2em;
+}
+
+.change-calc {
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.change-calc button {
+  padding: 15px;
+}
+
+.input-total-edit input {
+  width: 120px;
+  margin-right: 5px;
+}
+
+.input-total-edit {
+  width: 84%;
+}
+
+.table-camps {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.tasa-dolar-contain-calc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tasa-dolar-contain-calc input {
+  width: 250px;
+  height: 30px;
+}
+
+.tr-camps {
+  min-width: 120px;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+.calcu-link,
+.inv-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  background: #2d343c;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  text-align: center;
+  width: 250px;
+  height: 200px;
+}

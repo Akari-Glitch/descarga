@@ -1,6 +1,7 @@
 const inputs = document.getElementById("content-articles");
 const getCount = inputs.childNodes.length - 1;
 let count = Number(getCount);
+
 if (count - 1 < 1) {
   count++;
   let tr = document.createElement("tr");
@@ -9,12 +10,12 @@ if (count - 1 < 1) {
 				<td id="article${count}">
 				<span>${count}#</span>
 
-				<input id="article${count}" autocomplete="off" type="text" name="product" placeholder="nombre del articulo">
+				<input id="article${count}" autocomplete="off" type="text" name="product" placeholder="nombre del articulo" required>
 				</input>
 				</td>
 
 				<td>
-				<input id="mount${count}" type="number" name="amount" oninput="changeMount(this)" placeholder="cantidad de articulos"></input>
+				<input id="mount${count}" type="number" name="amount" oninput="changeMount(this)" placeholder="cantidad de articulos" required></input>
 				</td>
 
 				<td>
@@ -46,12 +47,12 @@ function addNewArticle() {
   tr.innerHTML = `
 				<td>
 				<span>${count}#</span>
-				<input id="article${count}" autocomplete="off" type="text" name="product" placeholder="nombre del articulo">
+				<input id="article${count}" autocomplete="off" type="text" name="product" placeholder="nombre del articulo" required>
 				</input>
 				</td>
 
 				<td>
-				<input id="mount${count}" oninput="changeMount(this)" type="number" name="amount" placeholder="cantidad de articulos"></input>
+				<input id="mount${count}" oninput="changeMount(this)" type="number" name="amount" placeholder="cantidad de articulos" required></input>
 				</td>
 
 				<td>
@@ -76,8 +77,6 @@ function addNewArticle() {
 
   inputs.appendChild(tr);
 }
-
-function changeCount() {}
 
 function removeArticle(e) {
   e.parentElement.remove();

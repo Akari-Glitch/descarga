@@ -4,47 +4,12 @@ extends ../templates/template
 block main
 	a(href="/index" class="btn-back") Volver
 	div(class="contain-inv")
-		button(onClick="showForm()" class="btn-buy") Realizar una nueva compra
+		a(class="btn-buy" href="/ventas") Ver ventas
 		label(for="tasa-dolar") 
 			h1 Ingrese tasa del dolar
 		input(type="number" id="tasa-dolar" placeholder="tasa del dólar actual..." name="tasa-dolar" step="0.01")
 
-		div(id="form-contain" class="form-contain-inv")
-			form(action="/inventario/add" method="POST" class="form-inv" id="form")
-
-				div(class="form-content")
-					div(id="content-inputs" class="content-inputs")
-						input(id="client" autocomplete="off" type="text" name="client" placeholder="nombre del cliente")
-						table(class="content-articles")
-							tbody(id="content-articles")
-								tr(class="article") 
-									td
-										h3 Articulo 
-									td
-										h3 Cantidad
-									td 
-										h3 Precio $ 
-									td 
-										h3 Precio Bs
-									td 
-										h3 Monto $
-									td
-										h3 Monto Bs 
-									td(class="btn-delete-art")
-										div
-					
-					div(class="input-total")
-						div(class="input-total-contain")
-							label(for="monto-total-dolar") monto total dolar
-							input(class="total-dolar" id="monto-total-dolar" step="0.01" type="number" name="priceTotalAllDolar" placeholder="total $" readonly)
-						div(class="input-total-contain")
-							label(for="monto-total-bs") monto total bs
-							input(class="total-bs" id="monto-total-bs" step="0.01" type="number" name="priceTotalAllBs" placeholder="total Bs" readonly) 
-	
-					div(class="content-btn")
-						button(type="button" onClick="addNewArticle()") agregar nuevo articulo
-						button(type="submit") Realizar venta
-						button(type="button" onClick="hiddenForm()") Cancelar
+		
 						
 	div(class="contain-sells")
 		h1(class="title-sells") Ventas:
@@ -63,8 +28,8 @@ block main
 						p(class="fecha" id="fecha") #{String(fecha).slice(0,16)}
 							   
 	script
-		include ../js/inventario/addArticle.js
+		include ../js/inventario/ventas/addArticle.js
 	script 
-		include ../js/inventario/showForm.js
+		include ../js/inventario/ventas/showForm.js
 	script
 		include ../js/shared/calcSystem.js
