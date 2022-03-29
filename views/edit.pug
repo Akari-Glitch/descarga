@@ -1,58 +1,58 @@
 extends ../templates/template
 
 block main
-	a(href="/inventario" class="btn-back") Volver
-	-const tasaDolar= sale.priceBs[0]/sale.priceDolar[0]
-	div(class="calc-contain-tasa-dolar")
-		label(for="tasa-dolar") Tasa del Dolar
-		input(type="number" id="tasa-dolar" class="calc-tasa-dolar" placeholder="Ingrese tasa del dólar actual..." name="tasa-dolar" value=tasaDolar step="0.01" readonly)
-	form(action="/edit/"+sale._id method="POST" class="form-inv" id="form")
-				div(class="form-content")
-					div(id="content-inputs" class="content-inputs")
-						label(for="client") Nombre del Cliente
-						input(id="client" type="text" autocomplete="off" name="client" placeholder="nombre del cliente" value=sale.client)
-						table(class="content-articles")
-							tbody(id="content-articles" class="tbody")
-								tr(class="article") 
-									td(class="tr-camps") Articulo
-									td(class="tr-camps") Cantidad
-									td(class="tr-camps") Precio $
-									td(class="tr-camps") Precio Bs
-									td(class="tr-camps") Monto $
-									td(class="tr-camps") Monto Bs
-									td(class="btn-delete-art")
-										div
-								each item, index in sale.product
+	div(class="contain-edit")
+		-const tasaDolar= sale.priceBs[0]/sale.priceDolar[0]
+		div(class="calc-contain-tasa-dolar")
+			label(for="tasa-dolar") Tasa del Dolar
+			input(type="number" id="tasa-dolar" class="calc-tasa-dolar" placeholder="Ingrese tasa del dólar actual..." name="tasa-dolar" value=tasaDolar step="0.01" readonly)
+		form(action="/edit/"+sale._id method="POST" class="form-inv" id="form")
+					div(class="form-content")
+						div(id="content-inputs" class="content-inputs")
+							label(for="client") Nombre del Cliente
+							input(id="client" type="text" autocomplete="off" name="client" placeholder="nombre del cliente" value=sale.client)
+							table(class="content-articles")
+								tbody(id="content-articles-edit" class="tbody")
 									tr(class="article") 
-										td 
-											span= Number (index +1)+"#"
-											input(id="article"+Number (index +1) type="text" name="product" placeholder="nombre del articulo" value=item)
-										td
-											input(id="mount"+Number (index +1) oninput="changeMount(this)" type="number" name="amount" placeholder="cantidad de articulos" value=sale.amount[index]) 
-										td
-											input(id="price"+Number (index +1) step="0.01" type="number" oninput="converToBs(this)" name="priceDolar" placeholder="precio $" value=sale.priceDolar[index])
-										td
-											input(id="priceBs"+Number (index +1) step="0.01" type="number" name="priceBs" placeholder="monto bs" readonly value=sale.priceBs[index])
-										td
-											input(id="priceTotalDolar"+Number (index +1) step="0.01" type="number" name="priceTotalDolar" placeholder="total $" readonly value=sale.priceTotalDolar[index])
-										td
-											input(id="priceTotalBs"+Number (index +1) step="0.01" type="number" name="priceTotalBs" placeholder="monto Bs" readonly value=sale.priceTotalBs[index])
-										td(onClick="removeArticle(this)" class="btn-delete-art") Eliminar
-					div(class="input-total input-total-edit")
-						div(class="input-total-contain")
-							label(for="monto-total-dolar") monto total dolar
-							input(class="total-dolar" id="monto-total-dolar" step="0.01" type="number" name="priceTotalAllDolar" placeholder="total $"  readonly value=`${sale.priceTotalAllDolar}`)
-						div(class="input-total-contain")
-							label(for="monto-total-bs") monto total bs
-							input(class="total-bs" id="monto-total-bs" step="0.01" type="number" name="priceTotalAllBs"  placeholder="total Bs" readonly value=`${sale.priceTotalAllBs}`) 
-					
-					div(class="content-btn")
-						button(type="button" onClick="addNewArticle()") Agregar nuevo articulo
-						button(type="submit") Realizar cambios
-						button(type="button") 
-							a(href="/inventario") Cancelar
-						a(href="/delete/"+sale._id class="delete-sell") Eliminar venta
+										td(class="tr-camps") Articulo
+										td(class="tr-camps") Cantidad
+										td(class="tr-camps") Precio $
+										td(class="tr-camps") Precio Bs
+										td(class="tr-camps") Monto $
+										td(class="tr-camps") Monto Bs
+										td(class="btn-delete-art")
+											div
+									each item, index in sale.product
+										tr(class="article") 
+											td 
+												span= Number (index +1)+"#"
+												input(id="article"+Number (index +1) type="text" name="product" placeholder="nombre del articulo" value=item)
+											td
+												input(id="mount"+Number (index +1) oninput="changeMount(this)" type="number" name="amount" placeholder="cantidad de articulos" value=sale.amount[index]) 
+											td
+												input(id="price"+Number (index +1) step="0.01" type="number" oninput="converToBsE(this)" name="priceDolar" placeholder="precio $" value=sale.priceDolar[index])
+											td
+												input(id="priceBs"+Number (index +1) step="0.01" type="number" name="priceBs" placeholder="monto bs" readonly value=sale.priceBs[index])
+											td
+												input(id="priceTotalDolar"+Number (index +1) step="0.01" type="number" name="priceTotalDolar" placeholder="total $" readonly value=sale.priceTotalDolar[index])
+											td
+												input(id="priceTotalBs"+Number (index +1) step="0.01" type="number" name="priceTotalBs" placeholder="monto Bs" readonly value=sale.priceTotalBs[index])
+											td(onClick="removeArticle(this)" class="btn-delete-art") Eliminar
+						div(class="input-total input-total-edit")
+							div(class="input-total-contain")
+								label(for="monto-total-dolar") monto total dolar
+								input(class="total-dolar" id="monto-total-dolar" step="0.01" type="number" name="priceTotalAllDolar" placeholder="total $"  readonly value=`${sale.priceTotalAllDolar}`)
+							div(class="input-total-contain")
+								label(for="monto-total-bs") monto total bs
+								input(class="total-bs" id="monto-total-bs" step="0.01" type="number" name="priceTotalAllBs"  placeholder="total Bs" readonly value=`${sale.priceTotalAllBs}`) 
+						
+						div(class="content-btn")
+							button(type="button" onClick="addNewArticleInv()") Agregar nuevo articulo
+							button(type="submit") Realizar cambios
+							button(type="button") 
+								a(href="/ventas") Cancelar
+							a(href="/delete/"+sale._id class="delete-sell") Eliminar venta
 	script
-		include ../js/inventario/ventas/addArticle.js
+		include ../js/inventario/edit/addArticleInv.js
 	script 
 		include ../js/shared/calcSystem.js

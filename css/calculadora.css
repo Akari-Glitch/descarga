@@ -1,9 +1,20 @@
 .calc-title {
   text-align: center;
-  font-size: 1.7rem;
+  color: #fa8328;
+  font-size: 40px;
   margin-top: 100px;
 }
 
+.calc-contain {
+  position: absolute;
+  right: 0;
+  width: 82%;
+}
+
+.calc-contain input {
+  height: 25px;
+  width: 160px;
+}
 .calc-content-articles {
   overflow-y: hidden;
 }
@@ -34,14 +45,14 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .calculadora {
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 75px);
   grid-template-rows: 160px repeat(5, 75px);
-  background-color: gray;
+  background-color: black;
   padding: 15px;
   border-radius: 32px;
 }
@@ -58,7 +69,7 @@ label {
 }
 
 .container button:active {
-  background-color: gray;
+  background-color: #5cc1ba;
 }
 
 .container button:focus {
@@ -93,11 +104,18 @@ label {
   position: sticky;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .change-calc button {
   padding: 15px;
+  background: #fa8328;
+  border: none;
+  color: white;
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
 }
 
 .input-total-edit input {
@@ -111,6 +129,8 @@ label {
 
 .table-camps {
   text-align: center;
+  font-weight: bolder;
+  font-size: 18px;
 }
 
 table {
@@ -126,7 +146,7 @@ table {
 
 .tasa-dolar-contain-calc input {
   width: 250px;
-  height: 30px;
+  height: 25px;
 }
 
 .tr-camps {

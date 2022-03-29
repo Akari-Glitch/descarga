@@ -1,0 +1,13 @@
+extends ../templates/template
+
+block main
+    span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+    div(class="contain-opciones")
+        h1 Opciones
+        div(class="contain-logout")
+            a(class="btn-option" onClick="respaldo()") crear respaldo
+            a(class="btn-option" onClick="pdf()") PDF
+            a(href="/signup" class="register") crear usuario
+            a(href="/logout" class="logout") Log out
+    script
+        include ../js/opciones/index.js

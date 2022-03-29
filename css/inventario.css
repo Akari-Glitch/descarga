@@ -20,15 +20,6 @@
   -moz-appearance: textfield;
 }
 
-.contain-sells {
-  margin-top: 90px;
-}
-
-.title-sells {
-  text-indent: 80px;
-  font-size: 1.7rem;
-}
-
 .form-contain-inv {
   position: fixed;
   display: table;
@@ -53,7 +44,7 @@
 
 .form-content {
   width: 95%;
-  height: 600px;
+  height: 650px;
   background: white;
 }
 
@@ -77,7 +68,7 @@
 }
 .content-articles input {
   margin-top: 5px;
-  width: 120px;
+  width: 150px;
   height: 25px;
 }
 
@@ -99,10 +90,10 @@
 
 .content-btn {
   display: flex;
-  margin-top: 10px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 100%;
   align-items: center;
   justify-content: space-around;
 }
@@ -112,58 +103,41 @@
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 10px;
-  background: #2d343c;
+  border: none;
+  padding: 20px;
+  background: #fa8328;
   color: white;
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
 }
 
-.list-sales {
-  display: flex;
-  margin-top: 30px;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
 #client {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.sale-contain {
-  color: white;
-  height: 300px;
-  width: 200px;
-  list-style: none;
-  background: #2d343c;
+  height: 30px;
   margin-bottom: 20px;
 }
 
-.sale-client {
-  text-align: center;
-  list-style: none;
-  font-size: 18px;
+.label-client {
+  color: rgba(250, 131, 40, 1);
   font-weight: bolder;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
+  font-size: 25px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
-
-.sale-product {
-  text-align: center;
-  font-size: 16px;
+.contain-edit {
+  width: 82%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 90px;
 }
-
-.amount {
-  margin-left: 5px;
-  color: green;
-}
-
 .camps {
   margin-top: 10px;
   margin-top: 35px;
   display: flex;
   width: 82%;
   margin-right: 10px;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .camps span {
@@ -181,20 +155,10 @@
   margin-left: 15px;
 }
 
-.products-contain {
-  max-height: 200px;
-  min-height: 200px;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
-}
-
 .input-total {
   display: flex;
-  justify-content: space-around;
-  width: 82%;
+  justify-content: space-evenly;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 30px;
 }
@@ -211,7 +175,7 @@
 }
 
 .input-total-contain label {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 .input-total-contain input {
@@ -220,7 +184,7 @@
 }
 
 .input-total input {
-  width: 130px;
+  width: 150px;
   height: 25px !important;
 }
 
@@ -240,4 +204,143 @@
   font-size: 14px;
   color: red;
   padding: 6px;
+}
+
+/* INVENTARIO */
+
+.container-inv {
+  position: absolute;
+  right: 0;
+  width: 82%;
+}
+
+.title-inv {
+  margin-top: 100px;
+  font-size: 40px;
+  color: #fa8328;
+}
+.container-inv img {
+  width: 35px;
+}
+
+.btn-ventas {
+  color: black;
+}
+.table-inv td {
+  text-align: center;
+}
+.table-inv input {
+  width: 150px;
+  height: 25px;
+}
+.contain-table-inv {
+  padding: 50px;
+  height: 400px;
+  margin-bottom: 100px;
+  max-height: 650px;
+  overflow-y: scroll;
+  -webkit-box-shadow: 0px 3px 16px 13px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 16px 13px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 16px 13px rgba(0, 0, 0, 0.1);
+}
+
+.camps-inv {
+  font-weight: bolder;
+}
+
+.contain-btn-ventas {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 3px solid rgba(250, 131, 40, 1);
+  padding: 10px;
+  background: white;
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+}
+
+.contain-btn-ventas p {
+  display: inline;
+}
+
+.btn-inv-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.btn-inv-content button {
+  padding: 10px;
+  background: green;
+  color: white;
+  -webkit-box-shadow: 1px -1px 28px 2px green;
+  -moz-box-shadow: 1px -1px 28px 2px green;
+  box-shadow: 1px -1px 28px 2px green;
+  border: none;
+}
+
+.form-input-tasadolar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contain-btn-tasa-dolar {
+  margin-top: 20px;
+  display: flex;
+  width: 400px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.contain-btn-tasa-dolar button {
+  border: none;
+  padding: 10px;
+  color: white;
+  background: #fa8328;
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+}
+
+.input-tasadolar-inv {
+  width: 400px !important;
+}
+
+.change-tasa-dolar {
+  background: #fa8328;
+  padding: 10px;
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+}
+
+.tasa-dolar-label-inv {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.save-changes {
+  background: rgb(4, 155, 200) !important;
+  color: white;
+  -webkit-box-shadow: 1px -1px 28px 2px rgb(4, 155, 200) !important;
+  -moz-box-shadow: 1px -1px 28px 2px rgb(4, 155, 200) !important;
+  box-shadow: 1px -1px 28px 2px rgb(4, 155, 200) !important;
+}
+
+.register {
+  margin-left: 35px;
+  width: 120px;
+  padding: 10px;
+  background-color: rgb(4, 155, 200);
+  color: white !important;
+
+  -webkit-box-shadow: 1px -1px 28px 2px rgb(4, 155, 200) !important;
+  -moz-box-shadow: 1px -1px 28px 2px rgb(4, 155, 200) !important;
+  box-shadow: 1px -1px 28px 2px rgb(4, 155, 200) !important;
 }

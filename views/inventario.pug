@@ -2,34 +2,48 @@ extends ../templates/template
 
 
 block main
-	a(href="/index" class="btn-back") Volver
-	div(class="contain-inv")
-		a(class="btn-buy" href="/ventas") Ver ventas
-		label(for="tasa-dolar") 
-			h1 Ingrese tasa del dolar
-		input(type="number" id="tasa-dolar" placeholder="tasa del dólar actual..." name="tasa-dolar" step="0.01")
-
+	span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+	div(class="container-inv")
 		
-						
-	div(class="contain-sells")
-		h1(class="title-sells") Ventas:
-		ul(class="list-sales")
-			each sale in sales.reverse()
-				a(href="/edit/"+sale.id class="sale-contain-link")
-					li(id=sale.id class="sale-contain")
-						div(class="products-contain")
-							p(class="sale-client")= sale.client
-									each items, index in sale.product
-										p(class="sale-product")= "- "+items 
-											span(class="amount")= "("+sale.amount[index]+")"
-						p(class="total-dolar")= "total $: "+ sale.priceTotalAllDolar
-						p(class="total-bs")= "total bs: "+ sale.priceTotalAllBs
-						-var fecha = sale.createdAt
-						p(class="fecha" id="fecha") #{String(fecha).slice(0,16)}
-							   
+		a(class="btn-ventas" href="/ventas")
+			span(class="contain-btn-ventas")
+					img(src="/sells.png")
+					p Ver ventas
+		div(class="contain-inv")
+			h1(class="title-inv") Inventario
+			div 
+			form(action="/tasadolar" method="POST" class="form-input-tasadolar")
+				label(for="input-tasadolar" class="tasa-dolar-label-inv") Tasa Dolar
+				input(id="input-tasadolar" step="0.01" type="number" class="input-tasadolar-inv" name="tasadolar" value=`${tasadolar[0].tasadolar}`) 
+				div(class="contain-btn-tasa-dolar")
+					button(type="submit") Establecer Tasa Dolar
+			div(class="contain-table-inv")
+				form(action="/editInv" method="POST")
+					table(class="table-inv")
+						tbody(id="tbody-inv")
+							tr(class="camps-inv")
+								td
+								td Id
+								td Artículo
+								td Precio $
+								td Cantidad
+								td
+							each article in articles.reverse()
+								each articulo, index in article.articulo
+									tr
+										td 
+											span #
+										td
+											input(name="id" autocomplete="off" required value=`${article.id[index]}`)
+										td 
+											input(name="articulo" autocomplete="off" value=`${articulo}` required)
+										td
+											input(step="0.01"  autocomplete="off" type="number" name="precioDolar" value=`${article.precioDolar[index]}` required)
+										td
+											input(step="0.01" autocomplete="off" type="number" name="cantidad" value=`${article.cantidad[index]}` required)
+										td(class="btn-delete-art" onClick="removeArt(this)") Eliminar
+					div(class="btn-inv-content")
+						button(onClick="addArticleInv()" class="btn-inv" id="add-article") Añadir Artículo
+						button(type="submit" id="save-changes" class="btn-inv save-changes") Guardar cambios
 	script
-		include ../js/inventario/ventas/addArticle.js
-	script 
-		include ../js/inventario/ventas/showForm.js
-	script
-		include ../js/shared/calcSystem.js
+		include ../js/inventario/index.js

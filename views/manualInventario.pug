@@ -1,0 +1,23 @@
+extends ../templates/template
+
+block main
+    span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+    div(class="container-manual")
+         h1(class="title-manual") Manual de Uso
+         div(class="contain-manual")
+            ul(class="list-manual")
+                li() 
+                    a(href="/manual/addVenta") Añadir venta
+                li() 
+                    a(href="/manual/inventario") Inventario
+                li() 
+                    a(href="/manual/editar") Editar
+                li() 
+                    a(href="/manual/opciones") Opciones
+            div(class="contain-content-manual")
+                h1(class="title-manual") Inventario
+                p En el inventario podrás establecer la tasa del dolar del cual se va a basar el formulario de añadir una nueva venta.
+                img(src="/set-tasadolar.jpg" class="img-manual") 
+                p También podrás establecer los productos en posesión para llevar una guía en el sistema de tablas. 
+                img(src="/inventario-tablas.jpg" class="img-manual")
+

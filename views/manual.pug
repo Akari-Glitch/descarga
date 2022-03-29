@@ -1,0 +1,14 @@
+extends ../templates/template
+
+block main
+    span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+    div(class="container-manual")
+        h1(class="title-manual") Manual de Uso
+        div(class="contain-manual")
+            ul(class="list-manual")
+                li() 
+                    a(href="/manual/addVenta") Añadir venta
+                li() 
+                    a(href="/manual/inventario") Inventario
+                li() 
+                    a(href="/manual/editar") Editar

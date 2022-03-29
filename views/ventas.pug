@@ -1,4 +1,20 @@
 extends ../templates/template
 
 block main
-    h1 
+    span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+    div(class="contain-sells")
+        h1(class="title-sells") Ventas
+        div(class="contain-list-sales")
+            ul(class="list-sales")
+                each sale in sales.reverse()
+                    a(href="/edit/"+sale.id class="sale-contain")
+                        li(id=sale.id)
+                            div()
+                                    h1= sale.client
+                                    each items, index in sale.product
+                                        p()= "- "+items
+                                            span(class="amount")= "("+sale.amount[index]+")"
+                            p()= "total $: "+ sale.priceTotalAllDolar
+                            p()= "total bs: "+ sale.priceTotalAllBs
+                            -var fecha = sale.createdAt
+                            p(id="fecha") #{String(fecha).slice(0,16)}

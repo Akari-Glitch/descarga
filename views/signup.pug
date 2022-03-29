@@ -14,19 +14,14 @@ html(lang="es")
 			div
 				h1(class="title-signin")
 					span(class="bienvenido") ¡Bienvenido, 
-					span(class="puntomarket") PuntoMarket!
-				form(action="/" method="POST" class="form-signin")
+					span(class="puntomarket") PuntoMarket!  
+					span(class="bienvenido") Registrate.
+				form(action="/signup" method="POST" class="form-signin")
 					label(for="username") username
 					input(type="text" id="username" autocomplete="off" name="username" placeholder="ingrese el usuario" class="input-signin" required)
 					label(for="password") password
 					input(type="password" id="password" autocomplete="off" name="password" placeholder="ingrese la clave" class="input-signin" required)
 
-					button(type="submit" class="enter-signin") Entrar
-					if signinMessage 
-						div(class="error-signin") #{signinMessage}
-					div(class="more-options")
-						a(href="#" onClick="recuperar()" ) recuperar contraseña
-	script.
-		function recuperar(){
-			alert("Se ha envíado un correo al administrador!")
-		}
+					button(type="submit" class="enter-signin") Registrarse
+					div(class="more-options-register")
+						a(href="/opciones" ) Volver

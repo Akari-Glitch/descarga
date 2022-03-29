@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   margin-top: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 85%;
 }
 
@@ -100,4 +100,12 @@ label {
   top: 0;
   height: 100%;
   width: 38%;
+}
+
+.more-options-register {
+  margin-top: 20px;
+}
+
+.more-options-register a {
+  color: #ed893e;
 }

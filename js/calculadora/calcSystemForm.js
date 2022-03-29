@@ -1,12 +1,12 @@
-let tasaDolarE = document.getElementById("tasa-dolar");
-let montoTotalDolarE = document.getElementById("monto-total-dolar");
-let montoTotalBsE = document.getElementById("monto-total-bs");
+let tasadolar = Number(document.getElementById("tasa-actual").textContent);
+const montoTotalDolar = document.getElementById("monto-total-dolar");
+const montoTotalBs = document.getElementById("monto-total-bs");
 
 // esta funcion cambia los campos que represental el total, tanto en bs como en $
 
 function changeTotal() {
   let suma = 0;
-
+  console.log(inputs);
   if (inputs.childNodes.length - 1 != 0) {
     for (let i = 1; i <= inputs.childNodes.length - 1; i++) {
       let input = inputs.childNodes[i].childNodes[9] != undefined ? 9 : 5;
@@ -22,13 +22,13 @@ function changeTotal() {
   } else {
     suma = 0;
   }
-  montoTotalDolarE.value = suma.toFixed(2);
-  montoTotalBsE.value = (montoTotalDolar.value * tasaDolarE.value).toFixed(2);
+  montoTotalDolar.value = suma.toFixed(2);
+  montoTotalBs.value = (montoTotalDolar.value * tasadolar).toFixed(2);
 }
 
 // esta funcion hace la conversion a bolivares y actualiza los campos
 
-function converToBsE(e) {
+function converToBs(e) {
   const getCount = e.id.slice(5);
   const mount = document.getElementById(`mount${getCount}`);
   const priceBs = document.getElementById(`priceBs${getCount}`);
@@ -36,8 +36,8 @@ function converToBsE(e) {
   const priceTotalDolar = document.getElementById(`priceTotalDolar${getCount}`);
   const priceDolar = document.getElementById(`price${getCount}`);
 
-  priceBs.value = (tasaDolarE.value * e.value).toFixed(2);
-  priceTotalBs.value = (tasaDolarE.value * e.value * mount.value).toFixed(2);
+  priceBs.value = (tasadolar * e.value).toFixed(2);
+  priceTotalBs.value = (tasadolar * e.value * mount.value).toFixed(2);
   priceTotalDolar.value = (priceDolar.value * mount.value).toFixed(2);
 
   if (document.getElementById(`priceTotalDolar1`) != null) {
@@ -50,5 +50,5 @@ function converToBsE(e) {
 function changeMount(e) {
   const getCount = e.id.slice(5);
   const priceDolar = document.getElementById(`price${getCount}`);
-  converToBsE(priceDolar);
+  converToBs(priceDolar);
 }

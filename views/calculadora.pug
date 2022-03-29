@@ -1,62 +1,63 @@
 extends ../templates/template
 
 block main
-	a(href="/index" class="btn-back") Volver
-	div(class="change-calc")
-		button(class ="calc-btn" onClick="changeCalc()") Cambiar calculadora
-	div(class="calc-normal" id="calc-normal")
-		h1(class="calc-title") Calculadora
-		div(class="container")
-			div(class="calculadora")
-				div(class='display')
-					div(id="valor-anterior")
-					div(id="valor-actual")
-				button(class="col-2" onClick="display.borrarTodo()") C
-				button(onClick="display.borrar()") &#129044;
-				button(class="operador" value="dividir") %
-				button(class="numero") 7
-				button(class="numero") 8
-				button(class="numero") 9
-				button(class="operador" value="multiplicar") X
-				button(class="numero") 4
-				button(class="numero") 5
-				button(class="numero") 6
-				button(class="operador" value="restar") -
-				button(class="numero") 1
-				button(class="numero") 2
-				button(class="numero") 3
-				button(class="operador" value="sumar") +
-				button(class="col-2 numero") 0
-				button(class="numero") .
-				button(class="operador" value="igual") =	
+	span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+	div(class="calc-contain")
+		div(class="calc-normal" id="calc-normal")
+			h1(class="calc-title") Calculadora Estandar
+			div(class="container")
+				div(class="calculadora")
+					div(class='display')
+						div(id="valor-anterior")
+						div(id="valor-actual")
+					button(class="col-2" onClick="display.borrarTodo()") C
+					button(onClick="display.borrar()") &#129044;
+					button(class="operador" value="dividir") %
+					button(class="numero") 7
+					button(class="numero") 8
+					button(class="numero") 9
+					button(class="operador" value="multiplicar") X
+					button(class="numero") 4
+					button(class="numero") 5
+					button(class="numero") 6
+					button(class="operador" value="restar") -
+					button(class="numero") 1
+					button(class="numero") 2
+					button(class="numero") 3
+					button(class="operador" value="sumar") +
+					button(class="col-2 numero") 0
+					button(class="numero") .
+					button(class="operador" value="igual") =	
 
 
-	div(class="calc-system" id="calc-system")
-		h1(class="calc-title") Calculadora del Sistema
-		table 
-			tbody
-				tr(class="table-camps") 
-					td Articulo 
-					td Cantidad
-					td Precio $ 
-					td Precio Bs
-					td Monto $
-					td Monto Bs 
-				tr 
-					td 
-						input(id="article" autocomplete="off" type="text" placeholder="nombre del articulo")
-					td 
-						input(id="mount" oninput="changeMount(this)" type="number" placeholder="cantidad de articulos") 
-					td 
-						input(id="price" step="0.01" type="number" oninput="converToBs(this)" name="priceDolar" placeholder="precio del articulo $")
-					td
-						input(id="priceBs" step="0.01" type="number" placeholder="monto bs" readonly)
-					td
-						input(id="priceTotalDolar" step="0.01" type="number" placeholder="total $" readonly)
-					td
-						input(id="priceTotalBs" step="0.01" type="number" placeholder="monto Bs" readonly)
-		div(class="tasa-dolar-contain-calc")
-			input(type="number" class="tasa-dolar-calc" id="tasa-dolar" placeholder="Ingrese tasa del dólar actual..." name="tasa-dolar" step="0.01")
+		div(class="calc-system" id="calc-system")
+			h1(class="calc-title") Calculadora del Sistema
+			table 
+				tbody
+					tr(class="table-camps") 
+						td Articulo
+						td Cantidad
+						td Precio $ 
+						td Precio Bs
+						td Monto $
+						td Monto Bs 
+					tr 
+						td 
+							input(id="article" autocomplete="off" type="text" name="product" placeholder="nombre del articulo") 
+						td 
+							input(id="mount" oninput="changeMount(this)" type="number" placeholder="cantidad de articulos") 
+						td 
+							input(id="price" step="0.01" type="number" oninput="converToBs(this)" name="priceDolar" placeholder="precio del articulo $")
+						td
+							input(id="priceBs" step="0.01" type="number" placeholder="monto bs" readonly)
+						td
+							input(id="priceTotalDolar" step="0.01" type="number" placeholder="total $" readonly)
+						td
+							input(id="priceTotalBs" step="0.01" type="number" placeholder="monto Bs" readonly)
+			div(class="tasa-dolar-contain-calc")
+				input(type="number" class="tasa-dolar-calc" id="tasa-dolar" placeholder="Ingrese tasa del dólar actual..." name="tasa-dolar" step="0.01")
+		div(class="change-calc")
+			button(class ="calc-btn" onClick="changeCalc()") Cambiar calculadora
 		script
 			include ../js/calculadora/calculator.js
 		script 

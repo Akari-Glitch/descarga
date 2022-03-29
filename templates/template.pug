@@ -12,7 +12,9 @@ html(lang="es")
 			include ../css/calculadora.css
 			include ../css/inventario.css
 			include ../css/template.css
-
+			include ../css/ventas.css
+			include ../css/opciones.css
+			include ../css/manual.css
 	body
 		header(class="header-template")
 			img(src="/logo.png" class="logo")
@@ -21,7 +23,7 @@ html(lang="es")
 					li
 						img(src="/home.png")
 						span Inicio
-				a(onClick="showForm()")
+				a(onClick="showForm()" id="add-venta")
 					li(class="add-sell")
 						img(src="/add.png")
 						span Añadir venta
@@ -33,19 +35,20 @@ html(lang="es")
 					li
 						img(src="/calculator.png")
 						span Calculadora
-				a(href="#")
+				a(href="/manual")
 					li
 						img(src="/manual.png")
 						span Manual
-				a(href="#")
+				a(href="/opciones")
 					li
 						img(src="/settings.png")
-						span Configuración
+						span Más opciones
 		div(id="form-contain" class="form-contain-inv")
 			form(action="/inventario/add" method="POST" class="form-inv" id="form")
 
 				div(class="form-content")
 					div(id="content-inputs" class="content-inputs")
+						label(for="client" class="label-client") Cliente
 						input(id="client" autocomplete="off" type="text" name="client" placeholder="nombre del cliente" required)
 						table(class="content-articles")
 							tbody(id="content-articles")
@@ -74,7 +77,7 @@ html(lang="es")
 							input(class="total-bs" id="monto-total-bs" step="0.01" type="number" name="priceTotalAllBs" placeholder="total Bs" readonly) 
 	
 					div(class="content-btn")
-						button(type="button" onClick="addNewArticle()") agregar nuevo articulo
+						button(type="button" class="add-article" onClick="addNewArticle()") agregar nuevo articulo
 						button(type="submit") Realizar venta
 						button(type="button" onClick="hiddenForm()") Cancelar
 		block main  
@@ -82,3 +85,5 @@ html(lang="es")
 			include ../js/inventario/ventas/addArticle.js
 		script 
 			include ../js/inventario/ventas/showForm.js
+		script
+			include ../js/calculadora/calcSystemForm.js

@@ -1,0 +1,77 @@
+.contain-sells {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 82%;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.list-sales {
+  display: flex;
+  margin-top: 30px;
+  width: 95%;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.title-sells {
+  text-align: center;
+  font-size: 40px;
+  color: #fa8328;
+}
+
+.sale-contain {
+  width: 250px;
+  height: 350px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  color: black;
+  text-indent: none;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 25px;
+  -webkit-box-shadow: 0px 0px 11px 10px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 0px 0px 11px 10px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 0px 11px 10px rgba(0, 0, 0, 0.32);
+}
+
+.sale-contain li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sale-contain li h1 {
+  font-size: 28px;
+  display: flex;
+  color: #fa8328;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sale-contain li div {
+  max-height: 216px;
+  min-height: 216px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 0;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  border-bottom: 1px solid black;
+}
+
+.contain-list-sales {
+  font-weight: bolder;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+}

@@ -15,7 +15,7 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.51);
 }
 .logo {
-  width: 200px;
+  width: 180px;
   margin-top: 25%;
 }
 nav {
@@ -43,8 +43,9 @@ nav li:hover {
   border-bottom: 2px solid black;
   border-radius: 0;
 }
+
 nav li img {
-  width: 35px;
+  width: 33px;
 }
 
 .title-template {

@@ -1,0 +1,22 @@
+extends ../templates/template
+
+block main
+    span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
+    div(class="container-manual")
+         h1(class="title-manual") Manual de Uso
+         div(class="contain-manual")
+            ul(class="list-manual")
+                li() 
+                    a(href="/manual/addVenta") Añadir venta
+                li() 
+                    a(href="/manual/inventario") Inventario
+                li() 
+                    a(href="/manual/editar") Editar
+            div(class="contain-content-manual")
+                h1(class="title-manual") Añadir Venta
+                p Para añadir una nueva venta pulsa el botón en el sidebar izquierdo. 
+                img(src="/ventas.jpg", alt="" class="img-manual")
+                p Se le abrirá un formulario y deberá de llenar los campos correspondientes. Luego pulse "Realizar venta" para guardar.
+                img(src="/formulario-venta.jpg" class="img-manual")
+                p Los cambios se verán reflejados en el inventario en la sección de ventas.
+                img(src="/ventas-ver.jpg" class="img-manual")
