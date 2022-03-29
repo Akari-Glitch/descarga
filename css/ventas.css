@@ -75,3 +75,18 @@
   justify-content: flex-end;
   text-align: center;
 }
+
+.btn-ventas-pdf {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  color: white;
+  background: #fa8328;
+  border: none;
+  -webkit-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  -moz-box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  box-shadow: 1px -1px 28px 2px rgba(250, 131, 40, 1);
+  height: 40px;
+  margin-bottom: 50px;
+}

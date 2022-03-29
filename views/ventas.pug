@@ -4,7 +4,8 @@ block main
     span(id="tasa-actual" class="tasa-actual-invi") #{tasadolar[0].tasadolar}
     div(class="contain-sells")
         h1(class="title-sells") Ventas
-        div(class="contain-list-sales")
+        button(class="btn-ventas-pdf" id="btnCrearPdf") Exportar ventas en pdf
+        div(class="contain-list-sales" id="ventas-pdf")
             ul(class="list-sales")
                 each sale in sales.reverse()
                     a(href="/edit/"+sale.id class="sale-contain")
@@ -18,3 +19,7 @@ block main
                             p()= "total bs: "+ sale.priceTotalAllBs
                             -var fecha = sale.createdAt
                             p(id="fecha") #{String(fecha).slice(0,16)}
+    script 
+        include ../js/inventario/ventas/html2pdf.bundle.min.js
+    script
+        include ../js/inventario/ventas/exportpdf.js
