@@ -34,13 +34,13 @@ block main
 										td 
 											span #
 										td
-											input(name="id" autocomplete="off" required value=`${article.id[index]}`)
+											input(name="id" autocomplete="off" oninput="activeChange()" required value=`${article.id[index]}`)
 										td 
-											input(name="articulo" autocomplete="off" value=`${articulo}` required)
+											input(name="articulo" autocomplete="off" oninput="activeChange()" value=`${articulo}` required)
 										td
-											input(step="0.01"  autocomplete="off" type="number" name="precioDolar" value=`${article.precioDolar[index]}` required)
+											input(step="0.01"  autocomplete="off" type="number" oninput="activeChange()" name="precioDolar" value=`${article.precioDolar[index]}` required)
 										td
-											input(step="0.01" autocomplete="off" type="number" name="cantidad" value=`${article.cantidad[index]}` required)
+											input(step="0.01" autocomplete="off" type="number"  oninput="activeChange()" name="cantidad" value=`${article.cantidad[index]}` required)
 										td(class="btn-delete-art" onClick="removeArt(this)") Eliminar
 					div(class="btn-inv-content")
 						button(onClick="addArticleInv()" class="btn-inv" id="add-article") Añadir Artículo

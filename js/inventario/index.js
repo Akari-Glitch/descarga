@@ -8,10 +8,10 @@ function addArticleInv() {
 
   trInv.innerHTML = `
                 <td> <span>#</span></td>     
-                <td> <input autocomplete="off" name="id" required></input></td>
-                <td> <input autocomplete="off" name="articulo"></input required></td> 
-                <td> <input autocomplete="off" step="0.01" type="number" name="precioDolar" required></input></td> 
-                <td> <input autocomplete="off" step="0.01" type="number" name="cantidad" required></input></td>  
+                <td> <input autocomplete="off" oninput="activeChange()" name="id" required></input></td>
+                <td> <input autocomplete="off" oninput="activeChange()" name="articulo"></input required></td> 
+                <td> <input autocomplete="off" oninput="activeChange()" step="0.01" type="number" name="precioDolar" required></input></td> 
+                <td> <input autocomplete="off" oninput="activeChange()" step="0.01" type="number" name="cantidad" required></input></td>  
                 <td class="btn-delete-art" onClick="removeArt(this)" required>Eliminar</td>       
         `;
 
